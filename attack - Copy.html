@@ -10,7 +10,7 @@
   function doAttack() {
       var xhr1 = new XMLHttpRequest();
       xhr1.overrideMimeType("text/plain; charset=iso-8859-1");
-      xhr1.open("GET", "attack.html");
+      xhr1.open("GET", target);
       xhr1.onreadystatechange = function() {
           if (xhr1.readyState == 4) {
               var content = xhr1.responseText;
