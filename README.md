@@ -3,7 +3,7 @@ Facebook for Android is prone to an information-disclosure vulnerability.  Succe
 
 # Usage
 
-Get a virtual machine running android and the Facebook apk > 1.8.6 , copy the (attack.html)[https://github.com/No-Cellist-7780/Facebook-LoginActivity/releases/tag/v1.0.0] file in the repo to your internal storage of the android then run the app
+Get a virtual machine running android and the Facebook apk > 1.8.6 , copy the [attack.html](https://github.com/No-Cellist-7780/Facebook-LoginActivity/releases/tag/v1.0.0) file in the repo to your internal storage of the android then run the app
 ## Note 
 for a successful attack, the victim user must be logged-into Facebook in advance.
 
